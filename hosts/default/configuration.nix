@@ -90,15 +90,6 @@
 
     virtualisation.virtualbox.host.enable = true;
 
-    stylix = {
-        enable = true;
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark-terminal.yaml";
-        image = ../../static/wallpaper3.png;
-        opacity.terminal = 0.98;
-
-        targets.grub.enable = false;
-    };
-
     users.groups.docker.members = [ "hugo" ];
 
     users.users.hugo = {
@@ -125,7 +116,6 @@
         wget
         kitty
         geany
-        firefox
         inputs.zen-browser.packages."x86_64-linux".specific
         pavucontrol
         mangohud
@@ -147,6 +137,7 @@
         xwayland.enable = true;
     };
 
+    programs.git.enable = true;
     programs.zsh.enable = true;
     programs.gamemode.enable = true;
 

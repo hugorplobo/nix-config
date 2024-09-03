@@ -22,8 +22,12 @@
     
     outputs = { nixpkgs, stylix, grub2-themes, home-manager, ... }@inputs:
         let
+            username = "hugo";
             system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system};
+            pkgs = import nixpkgs {
+                inherit system;
+                config.allowUnfree = true;
+            };
         in
         {
             nixosConfigurations.default = nixpkgs.lib.nixosSystem {
@@ -31,16 +35,16 @@
                 specialArgs = { inherit inputs; };
                 modules = [
                     ./hosts/default/configuration.nix
-                    stylix.nixosModules.stylix
                     grub2-themes.nixosModules.default
-                    home-manager.nixosModules.home-manager {
-                        home-manager = {
-                            useGlobalPkgs = true;
-                            useUserPackages = true;
-                            users.hugo = import ./hosts/default/home.nix;
-                            extraSpecialArgs = { inherit inputs; };
-                        };
-                    }
+                ];
+            };
+
+            homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                extraSpecialArgs = { inherit username inputs; };
+                modules = [
+                    stylix.homeManagerModules.stylix
+                    ./hosts/default/home.nix
                 ];
             };
         };

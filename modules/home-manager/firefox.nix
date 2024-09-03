@@ -5,7 +5,7 @@ let
 in
 {
     programs.firefox = {
-        enable = true;
+        enable = false;
         
         policies = {
             DefaultDownloadDirectory = "\${home}/Downloads";

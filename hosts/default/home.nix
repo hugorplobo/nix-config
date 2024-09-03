@@ -1,9 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{ username, config, pkgs, inputs, ... }:
 
 {
     home = {
-        username = "hugo";
-        homeDirectory = "/home/hugo";
+        inherit username;
+        homeDirectory = "/home/${username}";
         
         packages = with pkgs; [
             neofetch
@@ -19,12 +19,6 @@
             bat
         ];
 
-        file.".config/nixpkgs/config.nix".text = ''
-            {
-                allowUnfree = true;
-            }
-        '';
-
         file.".config/networkmanager-dmenu/config.ini".text = ''
         	[dmenu]
 	        dmenu_command = rofi -show run
@@ -32,9 +26,15 @@
 
         stateVersion = "24.05";
     };
-    
-    stylix.targets.waybar.enable = false;
-    stylix.targets.rofi.enable = false;
+
+    stylix = {
+        enable = true;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-terminal-dark.yaml";
+        image = ../../static/wallpaper3.png;
+        opacity.terminal = 0.90;
+        targets.waybar.enable = false;
+        targets.rofi.enable = false;
+    };
 
     programs.obs-studio.enable = true;
     programs.nixvim.enable = true;

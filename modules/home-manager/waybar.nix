@@ -127,7 +127,7 @@
                 color: #${config.lib.stylix.colors.base09};
             }
 
-            #pipewire {
+            #wireplumber {
                 color: #${config.lib.stylix.colors.base0A};
             }
 

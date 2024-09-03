@@ -17,7 +17,7 @@ in
         settings = {
             "$mod" = "SUPER";
             "$terminal" = "kitty";
-            "$browser" = "firefox";
+            "$browser" = "zen";
             "$menu" = "rofi -show drun";
             "$fileManager" = "nautilus";
             
@@ -51,7 +51,7 @@ in
                 blur = {
                     enabled = true;
                     size = 3;
-                    passes = 1;
+                    passes = 2;
                     vibrancy = 0.1696;
                 };
             };
@@ -141,7 +141,7 @@ in
 
             layerrule = [
                 "blur, rofi"
-                "noanim, rofi"
+                #"noanim, rofi"
             ];
         };
     };
