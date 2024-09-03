@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs, lib, inputs, ... }:
 
 {
@@ -10,7 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
   boot = {
     loader = {
       systemd-boot.enable = false;
@@ -34,22 +29,12 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/Fortaleza";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_BR.UTF-8";
     LC_IDENTIFICATION = "pt_BR.UTF-8";
@@ -82,7 +67,6 @@
     pkgs.xdg-desktop-portal-gtk
   ];
 
-  # Configure console keymap
   console.keyMap = "br-abnt2";
 
   nix.gc = {
@@ -143,6 +127,7 @@
     kitty
     geany
     firefox
+    inputs.zen-browser.packages."x86_64-linux".specific
     pavucontrol
     mangohud
     nautilus
