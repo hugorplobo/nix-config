@@ -4,7 +4,10 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     postgresql
     nodejs
+    python3
+    pipenv
     jdk17
+    ngrok
   ];
 
   shellHook = ''
