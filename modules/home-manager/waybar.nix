@@ -16,11 +16,11 @@
                 ];
                 
                 modules-center = [
-		    "clock"
+		            "clock"
                 ];
                 
                 modules-right = [
-		    "network"
+		            "network"
                     "backlight"
                     "wireplumber"
                     "battery"
@@ -36,11 +36,11 @@
                     spacing = 10;
                 };
 
-		"network" = {
-		    interface = "wlp2s0";
-		    format = "{ifname}";
-		    format-wifi = "  {essid}";
-		};
+                "network" = {
+                    interface = "wlp2s0";
+                    format = "{ifname}";
+                    format-wifi = "  {essid}";
+                };
                 
                 "backlight" = {
                     interval = 2;
@@ -139,18 +139,18 @@
                 color: #${config.lib.stylix.colors.base0C};
             }
 
-	    #cpu {
+            #cpu {
                 color: #${config.lib.stylix.colors.base0D};
-	    }
+            }
 
             #clock {
                 padding: 0 15px;
             }
 
-	    #workspaces button.active {
-		color: #${config.lib.stylix.colors.base0E};
-		font-weight: bold;
-	    }
+            #workspaces button.active {
+                color: #${config.lib.stylix.colors.base0E};
+                font-weight: bold;
+            }
         '';
     };
 }
