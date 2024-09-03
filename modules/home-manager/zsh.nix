@@ -8,6 +8,9 @@
         shellAliases = {
             web = "webstorm &> /dev/null &";
             idea = "idea-ultimate &> /dev/null &";
+            buildn = "sudo nixos-rebuild switch --flake ~/nix#default";
+            buildh = "home-manager switch --flake ~/nix#default";
+            build = "buildh && buildn";
         };
 
         antidote = {

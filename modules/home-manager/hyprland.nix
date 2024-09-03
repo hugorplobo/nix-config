@@ -2,13 +2,13 @@
 
 let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-        systemctl --user start plasma-polkit-agent
         waybar &
         swww init &
         sleep 1
         swww img ${config.home.homeDirectory}/nix/static/wallpaper3.png
         wl-paste --type text --watch cliphist store
         wl-paste --type image --watch cliphist store
+        systemctl --user start plasma-polkit-agent
     '';
 in
 {
@@ -105,6 +105,9 @@ in
                 ", Print, exec, grim - | swappy -f -"
                 "$mod, L, exec, hyprlock"
                 "$mod, N, exec, networkmanager_dmenu"
+
+                ", XF86MonBrightnessUp, exec, value=$(brightnessctl g); brightnessctl s $(($value + 25))"
+                ", XF86MonBrightnessDown, exec, value=$(brightnessctl g); brightnessctl s $(($value - 25))"
 
                 "$mod, 1, workspace, 1"
                 "$mod, 2, workspace, 2"

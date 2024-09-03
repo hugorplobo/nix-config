@@ -38,7 +38,7 @@
 
                 "network" = {
                     interface = "wlp2s0";
-                    format = "{ifname}";
+                    format = "";
                     format-wifi = "  {essid}";
                 };
                 
@@ -51,6 +51,14 @@
                     format = "{icon} {volume}%";
                     format-muted = "󰝟";
                     format-icons = ["" "" "" "" ""];
+                    on-click = ''
+                        mute=$(pamixer --get-mute);
+                        if [[ "$mute" == "true" ]];
+                            then pamixer -u;
+                        else
+                            pamixer -m;
+                        fi
+                    '';
                 };
                 
                 "battery" = {
@@ -149,7 +157,6 @@
 
             #workspaces button.active {
                 color: #${config.lib.stylix.colors.base0E};
-                font-weight: bold;
             }
         '';
     };

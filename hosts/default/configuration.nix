@@ -120,7 +120,8 @@
         pavucontrol
         mangohud
         nautilus
-        networkmanager
+        brightnessctl
+        pamixer
     ];
 
     environment.variables = {
