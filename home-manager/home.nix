@@ -51,7 +51,7 @@
     ./modules/kitty.nix
     ./modules/swappy.nix
     ./modules/rofi.nix
-    ./modules/waybar/waybar.nix
+    ./modules/waybar.nix
     ./modules/mako.nix
     ./modules/git.nix
     ./modules/zsh.nix

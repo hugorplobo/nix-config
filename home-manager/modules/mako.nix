@@ -9,5 +9,6 @@
 
     font = lib.mkForce "monospace 10";
     borderRadius = 10;
+    margin = "30";
   };
 }
