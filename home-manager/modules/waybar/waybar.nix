@@ -11,15 +11,16 @@
                 spacing = "10";
                 
                 modules-left = [
-                    "clock"
-                ];
-                
-                modules-center = [
+                    "tray"
                     "hyprland/workspaces"
                 ];
                 
+                modules-center = [
+		    "clock"
+                ];
+                
                 modules-right = [
-                    "tray"
+		    "network"
                     "backlight"
                     "wireplumber"
                     "battery"
@@ -34,13 +35,19 @@
                         default = "○︎︎";
                     };
                     persistent-workspaces = {
-                        "*" = [1 2 3 4 5 6 7 8];
+                        "*" = [1 2 3 4 5 6 7 8 9 10];
                     };
                 };
                 
                 "tray" = {
                     spacing = 10;
                 };
+
+		"network" = {
+		    interface = "wlp2s0";
+		    format = "{ifname}";
+		    format-wifi = "  {essid}";
+		};
                 
                 "backlight" = {
                     interval = 2;
@@ -49,7 +56,7 @@
                 
                 "wireplumber" = {
                     format = "{icon} {volume}%";
-                    format-muted = "󰝟 ";
+                    format-muted = "󰝟";
                     format-icons = ["" "" "" "" ""];
                 };
                 
@@ -73,8 +80,8 @@
                 };
                 
                 "clock" = {
-                    interval = 1;
-                    format = "{:%B %d, %H:%M:%S}";
+                    interval = 60;
+                    format = "{:%B %d, %H:%M}";
                     tooltip = false;
                 };
             };
@@ -119,25 +126,29 @@
                 background: #${config.lib.stylix.colors.base01};
             }
 
-            #backlight {
+            #network {
                 color: #${config.lib.stylix.colors.base08};
             }
 
-            #pipewire {
+            #backlight {
                 color: #${config.lib.stylix.colors.base09};
             }
 
-            #battery {
+            #pipewire {
                 color: #${config.lib.stylix.colors.base0B};
             }
 
-            #memory {
+            #battery {
                 color: #${config.lib.stylix.colors.base0C};
             }
 
-            #cpu {
-                color: #${config.lib.stylix.colors.base0E};
+            #memory {
+                color: #${config.lib.stylix.colors.base0D};
             }
+
+	    #cpu {
+                color: #${config.lib.stylix.colors.base0E};
+	    }
 
             #clock {
                 padding: 0 15px;
