@@ -9,6 +9,6 @@ jobs:
         - uses: cachix/install-nix-action@v27
           with:
             nix_path: nixpkgs=channel:nixos-unstable
-        - run: nix run nixpkgs#home-manager build -- --flake .
+        - run: nix run nixpkgs#home-manager build -- --flake .#hugo
 
     
