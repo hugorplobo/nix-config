@@ -16,3 +16,9 @@ jobs:
 
       - name: Apply Home Manager configuration
         run: nix run nixpkgs#home-manager -- build --flake .#hugo
+      
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Config files
+          path: result/home-files/.config
+          if-no-files-found: error
