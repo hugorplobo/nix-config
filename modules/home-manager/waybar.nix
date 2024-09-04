@@ -50,7 +50,7 @@
                 "wireplumber" = {
                     format = "{icon} {volume}%";
                     format-muted = "󰝟";
-                    format-icons = ["" "" "" "" ""];
+                    format-icons = ["" " " " " " " " "];
                     on-click = ''
                         mute=$(pamixer --get-mute);
                         if [[ "$mute" == "true" ]];

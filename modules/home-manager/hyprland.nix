@@ -108,6 +108,8 @@ in
 
                 ", XF86MonBrightnessUp, exec, value=$(brightnessctl g); brightnessctl s $(($value + 25))"
                 ", XF86MonBrightnessDown, exec, value=$(brightnessctl g); brightnessctl s $(($value - 25))"
+		", XF86AudioRaiseVolume, exec, pamixer -i 5"
+		", XF86AudioLowerVolume, exec, pamixer -d 5"
 
                 "$mod, 1, workspace, 1"
                 "$mod, 2, workspace, 2"
