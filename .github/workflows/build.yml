@@ -7,6 +7,6 @@ jobs:
     steps:
         - uses: actions/checkout@v4
         - uses: DeterminateSystems/nix-installer-action@main
-        - run: nix run nixpkgs#home-manager build -- --flake .#hugo
+        - run: nix run nixpkgs#home-manager -- switch --flake .#hugo
 
     
