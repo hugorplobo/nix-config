@@ -21,4 +21,5 @@ jobs:
         with:
           name: Config files
           path: result/home-files/.config
+          include-hidden-files: true
           if-no-files-found: error
