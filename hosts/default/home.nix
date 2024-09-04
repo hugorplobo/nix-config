@@ -4,20 +4,6 @@
     home = {
         inherit username;
         homeDirectory = "/home/${username}";
-        
-        packages = with pkgs; [
-            neofetch
-            networkmanager_dmenu
-            telegram-desktop
-            discord
-            swww
-            zotero
-            vscode-fhs
-            jetbrains.webstorm
-            jetbrains.idea-ultimate
-            postman
-            bat
-        ];
 
         file.".config/networkmanager-dmenu/config.ini".text = ''
         	[dmenu]
@@ -54,5 +40,6 @@
         ../../modules/home-manager/git.nix
         ../../modules/home-manager/zsh.nix
         ../../modules/home-manager/firefox.nix
+        ../../modules/home-manager/packages.nix
     ];
 }

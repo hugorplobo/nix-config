@@ -2,11 +2,17 @@ name: Build Home Directory
 run-name: Building dotfiles
 on: [push]
 jobs:
-  Build:
+  build:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v4
-        - uses: DeterminateSystems/nix-installer-action@main
-        - run: nix run nixpkgs#home-manager -- switch --flake .#hugo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
 
-    
+      - name: Create Nix configuration
+        run: echo '{ pkgs, ... }: {}' > modules/home-manager/packages.nix
+
+      - name: Apply Home Manager configuration
+        run: nix run nixpkgs#home-manager -- switch --flake .#hugo
