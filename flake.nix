@@ -14,9 +14,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         
-        grub2-themes.url = "github:vinceliuice/grub2-themes";
         zen-browser.url = "github:MarceColl/zen-browser-flake";
         stylix.url = "github:danth/stylix";
+        pyprland.url = "github:hyprland-community/pyprland";
+
+        grub2-themes.url = "github:vinceliuice/grub2-themes";
         mcmojave-hyprcursor.url = "github:libadoxon/mcmojave-hyprcursor";
     };
     

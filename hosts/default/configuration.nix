@@ -117,6 +117,7 @@
         kitty
         geany
         inputs.zen-browser.packages."x86_64-linux".specific
+        inputs.pyprland.packages."x86_64-linux".pyprland
         pavucontrol
         mangohud
         nautilus
