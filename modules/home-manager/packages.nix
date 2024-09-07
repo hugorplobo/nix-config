@@ -13,5 +13,6 @@
         jetbrains.idea-ultimate
         postman
         bat
+	wpsoffice
     ];
 }

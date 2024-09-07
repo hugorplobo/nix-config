@@ -4,6 +4,7 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     postgresql
     nodejs
+    yarn
     python3
     pipenv
     jdk17

@@ -10,6 +10,10 @@
 	        dmenu_command = rofi -show run
         '';
 
+	file.".config/nixpkgs/config.nix".text = ''
+		{ allowUnfree = true; }
+	'';
+
         stateVersion = "24.05";
     };
 
@@ -32,9 +36,11 @@
     imports = [
         inputs.nixvim.homeManagerModules.nixvim
         ../../modules/home-manager/hyprland.nix
+        ../../modules/home-manager/pyprland/pyprland.nix
         ../../modules/home-manager/kitty.nix
         ../../modules/home-manager/swappy.nix
         ../../modules/home-manager/rofi.nix
+        ../../modules/home-manager/ranger.nix
         ../../modules/home-manager/waybar.nix
         ../../modules/home-manager/mako.nix
         ../../modules/home-manager/git.nix

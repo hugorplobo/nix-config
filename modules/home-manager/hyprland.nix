@@ -9,6 +9,7 @@ let
         wl-paste --type text --watch cliphist store
         wl-paste --type image --watch cliphist store
         systemctl --user start plasma-polkit-agent
+        pypr
     '';
 in
 {
@@ -105,11 +106,12 @@ in
                 ", Print, exec, grim - | swappy -f -"
                 "$mod, L, exec, hyprlock"
                 "$mod, N, exec, networkmanager_dmenu"
+                "$mod SHIFT, Q, exec, pypr toggle term"
 
                 ", XF86MonBrightnessUp, exec, value=$(brightnessctl g); brightnessctl s $(($value + 25))"
                 ", XF86MonBrightnessDown, exec, value=$(brightnessctl g); brightnessctl s $(($value - 25))"
-		", XF86AudioRaiseVolume, exec, pamixer -i 5"
-		", XF86AudioLowerVolume, exec, pamixer -d 5"
+		        ", XF86AudioRaiseVolume, exec, pamixer -i 5"
+		        ", XF86AudioLowerVolume, exec, pamixer -d 5"
 
                 "$mod, 1, workspace, 1"
                 "$mod, 2, workspace, 2"
@@ -144,9 +146,18 @@ in
                 "$mod, mouse:273, resizewindow"
             ];
 
+            windowrulev2 = [
+                "workspace 1, class:(kitty)"
+                "workspace 2, class:(zen-alpha)"
+                "workspace 3, class:(org.gnome.Nautilus)"
+                "workspace 4, class:(jetbrains-idea)"
+                "workspace 5, class:(Zotero)"
+                "workspace 6, class:(org.telegram.desktop)"
+                "workspace 6, class:(discord)"
+            ];
+
             layerrule = [
                 "blur, rofi"
-                #"noanim, rofi"
             ];
         };
     };
