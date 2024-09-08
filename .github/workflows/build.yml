@@ -12,7 +12,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@main
 
       - name: Create Nix configuration
-        run: echo '{}' > modules/home-manager/packages.nix
+        run: echo '{}' > modules/home-manager/desktop/default.nix
 
       - name: Apply Home Manager configuration
         run: nix run nixpkgs#home-manager -- build --flake .#hugo
