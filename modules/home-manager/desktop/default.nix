@@ -11,6 +11,7 @@
         postman
         wpsoffice
         qbittorrent
+        spotify
     ];
 
     programs.obs-studio.enable = true;

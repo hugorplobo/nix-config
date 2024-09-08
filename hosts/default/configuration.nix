@@ -75,6 +75,7 @@
     };
 
     security.rtkit.enable = true;
+    services.playerctld.enable = true;
     services.pipewire = {
         enable = true;
         alsa.enable = true;
