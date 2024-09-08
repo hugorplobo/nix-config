@@ -19,7 +19,7 @@ in
             "$mod" = "SUPER";
             "$terminal" = "kitty";
             "$browser" = "zen";
-            "$menu" = "rofi -show drun";
+            "$menu" = "rofi -show drun -theme drun-theme";
             "$fileManager" = "nautilus";
             
             "exec-once" = ''${startupScript}/bin/start'';
@@ -107,6 +107,7 @@ in
                 "$mod, L, exec, hyprlock"
                 "$mod, N, exec, networkmanager_dmenu"
                 "$mod SHIFT, Q, exec, pypr toggle term"
+                "$mod, X, exec, pypr menu power"
 
                 ", XF86MonBrightnessUp, exec, value=$(brightnessctl g); brightnessctl s $(($value + 25))"
                 ", XF86MonBrightnessDown, exec, value=$(brightnessctl g); brightnessctl s $(($value - 25))"

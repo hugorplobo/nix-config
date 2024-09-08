@@ -1,5 +1,12 @@
 [pyprland]
-plugins = ["scratchpads"]
+plugins = ["scratchpads", "shortcuts_menu"]
+
+[shortcuts_menu.entries.power]
+"Lock" = "hyprlock"
+"Suspend" = "hyprlock & systemctl sleep"
+"Hibernate" = "hyprlock & systemctl hibernate"
+"Shutdown" = "systemctl poweroff"
+"Reboot" = "systemctl reboot"
 
 [scratchpads.term]
 animation = "fromTop"
