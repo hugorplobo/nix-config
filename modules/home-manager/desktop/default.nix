@@ -1,18 +1,17 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-        neofetch
-        networkmanager_dmenu
+    home.packages = with pkgs; [
         telegram-desktop
         discord
-        swww
         zotero
         vscode-fhs
         jetbrains.webstorm
         jetbrains.idea-ultimate
         postman
-        bat
-	wpsoffice
+        wpsoffice
+        qbittorrent
     ];
+
+    programs.obs-studio.enable = true;
 }

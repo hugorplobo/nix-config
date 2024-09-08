@@ -123,6 +123,7 @@
         nautilus
         brightnessctl
         pamixer
+	    vlc
     ];
 
     environment.variables = {
