@@ -5,7 +5,7 @@ let
         waybar &
         swww init &
         sleep 1
-        swww img ${config.home.homeDirectory}/nix/static/wallpaper3.png
+        swww img ${config.home.homeDirectory}/nix/static/wallpaper.png
         wl-paste --type text --watch cliphist store
         wl-paste --type image --watch cliphist store
         systemctl --user start plasma-polkit-agent
