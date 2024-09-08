@@ -6,11 +6,10 @@
         swww
     ];
 
-    programs.hyprlock.enable = true;
-
     imports = [
         ./pyprland
         ./hyprland.nix
+        ./hyprlock.nix
         ./mako.nix
         ./network-manager.nix
         ./nixpkgs.nix
