@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
     home.packages = with pkgs; [
@@ -15,6 +15,7 @@
     imports = [
         ./git.nix
         ./kitty.nix
+        ./nixvim.nix
         ./ranger.nix
         ./zsh.nix
     ];

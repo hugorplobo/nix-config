@@ -1,10 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
     programs.home-manager.enable = true;
 
     imports = [
-        inputs.nixvim.homeManagerModules.nixvim
         ./system
         ./desktop
         ./terminal
