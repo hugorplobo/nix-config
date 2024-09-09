@@ -2,6 +2,7 @@
 
 let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+        pypr &
         waybar &
         swww init &
         sleep 1
@@ -9,7 +10,6 @@ let
         wl-paste --type text --watch cliphist store
         wl-paste --type image --watch cliphist store
         systemctl --user start plasma-polkit-agent
-        pypr
     '';
 in
 {
