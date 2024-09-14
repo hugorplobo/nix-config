@@ -13,7 +13,7 @@
             image = [
                 {
                     path = "${../../../static/wallpaper_nobg.png}";
-                    size = 768;
+                    size = 1080;
                     rounding = 0;
                     border_size = 0;
                     valign = "center";
@@ -31,7 +31,7 @@
                     text = ''cmd[update:1000] echo -e "$(date +"%H:%M")"'';
                     text_align = "center";
                     color = "rgba(255, 255, 255, 1.0)";
-                    font_size = 160;
+                    font_size = 220;
                     font_family = "Alpha Slab One";
                     valign = "center";
                     halign = "left";
@@ -41,11 +41,11 @@
                     text = ''cmd[update:1000] echo -e "<b>$(date +"%d %b, %A")</b>"'';
                     text_align = "center";
                     color = "rgba(255, 255, 255, 1.0)";
-                    font_size = 13;
+                    font_size = 22;
                     font_family = "FiraCode Nerd Font Mono";
                     valign = "center";
                     halign = "left";
-                    position = "35, -100";
+                    position = "35, -135";
                 }
             ];
         };

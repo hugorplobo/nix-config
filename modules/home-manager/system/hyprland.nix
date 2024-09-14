@@ -24,7 +24,7 @@ in
             
             "exec-once" = ''${startupScript}/bin/start'';
 
-            monitor = [",preferred,auto,auto"];
+            monitor = ["eDP-1, 1920x1080, 0x0, 1"];
 
             env = [
                 "XCURSOR_SIZE,32"

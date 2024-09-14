@@ -35,7 +35,11 @@
                     biome.enable = true;
                     java-language-server.enable = true;
                     nixd.enable = true;
-                    rust-analyzer.enable = true;
+                    rust-analyzer = {
+			enable = true;
+			installRustc = false;
+			installCargo = false;
+		    };
                 };
             };
         };

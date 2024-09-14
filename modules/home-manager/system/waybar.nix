@@ -92,6 +92,7 @@
             * {
                 font-family: monospace;
                 font-size: 13px;
+		color: #${config.lib.stylix.colors.base05};
             }
 
             window#waybar {
@@ -124,7 +125,7 @@
                 padding: 0 10px;
                 margin: 0 2px;
                 border-radius: 20px;
-                background: #${config.lib.stylix.colors.base01};
+                background: #${config.lib.stylix.colors.base00};
             }
 
             #network {
