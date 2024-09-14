@@ -156,8 +156,8 @@
                 padding: 0 15px;
             }
 
-            #workspaces button.active {
-                color: #${config.lib.stylix.colors.base0E};
+            #workspaces button.active * {
+                color: #${config.lib.stylix.colors.base08};
             }
         '';
     };
