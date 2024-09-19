@@ -13,6 +13,18 @@
             url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+	hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+	hypr-darkwindow = {
+	    url = "github:micha4w/Hypr-DarkWindow";
+	    inputs.hyprland.follows = "hyprland";
+	};
+
+	Hyprspace = {
+	    url = "github:KZDKM/Hyprspace";
+	    inputs.hyprland.follows = "hyprland";
+	};
         
         zen-browser.url = "github:MarceColl/zen-browser-flake";
         stylix.url = "github:danth/stylix";
