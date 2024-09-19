@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, inputs, config, ... }:
 
 let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
@@ -15,6 +15,12 @@ in
 {
     wayland.windowManager.hyprland = {
         enable = true;
+
+	plugins = [
+	    inputs.hypr-darkwindow.packages."x86_64-linux".Hypr-DarkWindow
+	    inputs.Hyprspace.packages."x86_64-linux".Hyprspace
+	];
+
         settings = {
             "$mod" = "SUPER";
             "$terminal" = "kitty";
@@ -24,7 +30,7 @@ in
             
             "exec-once" = ''${startupScript}/bin/start'';
 
-            monitor = ["eDP-1, 1920x1080, 0x0, 1"];
+            monitor = ["eDP-1, 1920x1080, 0x0, 1, bitdepth, 10"];
 
             env = [
                 "XCURSOR_SIZE,32"
@@ -108,6 +114,8 @@ in
                 "$mod, N, exec, networkmanager_dmenu"
                 "$mod SHIFT, Q, exec, pypr toggle term"
                 "$mod, X, exec, pypr menu power"
+		"$mod, I, invertactivewindow"
+		"$mod, SPACE, overview:toggle"
 
                 ", XF86MonBrightnessUp, exec, value=$(brightnessctl g); brightnessctl s $(($value + 25))"
                 ", XF86MonBrightnessDown, exec, value=$(brightnessctl g); brightnessctl s $(($value - 25))"

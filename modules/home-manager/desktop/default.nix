@@ -12,6 +12,7 @@
         wpsoffice
         qbittorrent
         spotify
+	noisetorch
     ];
 
     programs.obs-studio.enable = true;

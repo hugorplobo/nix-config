@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let
     where-is-my-sddm-theme = (pkgs.where-is-my-sddm-theme.override {
@@ -36,7 +36,11 @@ in
         };
     };
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings = {
+	experimental-features = [ "nix-command" "flakes" ];
+	substituters = ["https://hyprland.cachix.org"];
+	trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    };
 
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
@@ -65,6 +69,8 @@ in
         };
 
         videoDrivers = [ "amdgpu" ];
+
+	desktopManager.xfce.enable = true;
     };
 
     services.displayManager.sddm = {
@@ -99,6 +105,7 @@ in
         alsa.support32Bit = true;
         pulse.enable = true;
         jack.enable = true;
+	wireplumber.enable = true;
     };
 
     virtualisation.docker = {
@@ -115,7 +122,6 @@ in
         description = "Hugo Lobo";
         extraGroups = [ "networkmanager" "wheel" ];
         shell = pkgs.zsh;
-        packages = with pkgs; [];
     };
 
     nixpkgs.config.allowUnfree = true;
@@ -143,6 +149,7 @@ in
         pamixer
 	    vlc
         libsForQt5.qt5.qtgraphicaleffects
+	btop
     ];
 
     environment.variables = {
@@ -157,6 +164,8 @@ in
 
     programs.hyprland = {
         enable = true;
+	package = inputs.hyprland.packages."x86_64-linux".hyprland;
+	portalPackage = inputs.hyprland.packages."x86_64-linux".xdg-desktop-portal-hyprland;
         xwayland.enable = true;
     };
 

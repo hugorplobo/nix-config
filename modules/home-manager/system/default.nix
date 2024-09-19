@@ -5,6 +5,7 @@
         networkmanager_dmenu
         swww
         rustup
+	distrobox
     ];
 
     imports = [
