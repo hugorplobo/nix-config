@@ -11,7 +11,7 @@
     imports = [
         ./pyprland
         ./rofi
-        
+        ./ags
         ./hyprland.nix
         ./hyprlock.nix
         ./mako.nix

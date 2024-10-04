@@ -30,9 +30,13 @@ in
             
             "exec-once" = ''${startupScript}/bin/start'';
 
-            monitor = ["eDP-1, 1920x1080, 0x0, 1, bitdepth, 10"];
+            monitor = [
+		"eDP-1, 1920x1080, 0x0, 1"
+		", preferred, auto, 1, mirror, eDP-1"
+	    ];
 
             env = [
+		"XDG_CURRENT_DESKTOP,Hyprland"
                 "XCURSOR_SIZE,32"
                 "HYPRCURSOR_SIZE,32"
                 "HYPRCURSOR_THEME,Vanilla-DMZ"
