@@ -27,6 +27,7 @@
                 "hlissner/zsh-autopair"
                 "MichaelAquilina/zsh-auto-notify"
                 "arzzen/calc.plugin.zsh"
+		"chisui/zsh-nix-shell"
             ];
         };
 

@@ -33,7 +33,7 @@
         grub2-themes.url = "github:vinceliuice/grub2-themes";
         mcmojave-hyprcursor.url = "github:libadoxon/mcmojave-hyprcursor";
 
-	ags.url = "github:aylur/ags/v2";
+	ags.url = "github:aylur/ags";
     };
     
     outputs = { nixpkgs, stylix, grub2-themes, home-manager, ... }@inputs:

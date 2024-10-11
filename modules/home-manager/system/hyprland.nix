@@ -174,6 +174,7 @@ in
 
             layerrule = [
                 "blur, rofi"
+		"blur, dashboard"
             ];
         };
     };

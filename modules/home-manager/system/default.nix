@@ -9,6 +9,7 @@
     ];
 
     imports = [
+        ./gtk.nix
         ./pyprland
         ./rofi
         ./ags
